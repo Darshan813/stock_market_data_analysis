@@ -3,6 +3,7 @@ import pandas as pd
 from load_to_s3 import s3Loader
 
 top_companies = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'TSLA', 'META', 'NVDA', 'JPM', 'V']
+
 all_splits = {}
 
 for i in top_companies:

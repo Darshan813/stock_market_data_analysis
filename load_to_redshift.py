@@ -51,7 +51,7 @@ class RedshiftLoader:
         try:
             cursor.execute(copy_sql)
             self.conn.commit()
-            print("Data Successfully Loaded To Redshift")
+            print(f"Data Successfully Loaded To Redshift Table {table_name}")
         except Exception as e:
             print(f"Error loading data into {e}")
         finally:

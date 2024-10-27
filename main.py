@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 api_key = "4JKLD6C4SJYP77PN"
-top_companies = ['AAPL']
+top_companies = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'TSLA', 'META', 'BRK.A', 'NVDA', 'JPM', 'V']
 file_path = f"C:\\Users\\ratho\\PycharmProjects\\stock_market\\stock_data\\combined_df.csv"
 
 combined_df = pd.DataFrame()
@@ -30,3 +30,4 @@ redshift_loader = RedshiftLoader()
 redshift_loader.from_s3(folder_name=date_folder, table_name=os.getenv("FACT_STOCK_TABLE"))
 
 redshift_loader.from_s3(folder_name="stock_split_data", table_name= os.getenv("STOCK_SPLIT_TABLE"))
+

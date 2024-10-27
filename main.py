@@ -1,12 +1,17 @@
+import os
+from datetime import datetime
+
 from extract import extract
-from load_to_redshift import load_to_redshift
-from load_to_s3 import upload_file_to_s3
+from load_to_redshift import RedshiftLoader
+from load_to_s3 import s3Loader
 import pandas as pd
+from dotenv import load_dotenv
+
+load_dotenv()
 
 api_key = "4JKLD6C4SJYP77PN"
-top_companies = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'TSLA', 'META', 'BRK.A', 'NVDA', 'JPM', 'V']
+top_companies = ['AAPL']
 file_path = f"C:\\Users\\ratho\\PycharmProjects\\stock_market\\stock_data\\combined_df.csv"
-bucket_name = "stocks-market-data"
 
 combined_df = pd.DataFrame()
 
@@ -16,10 +21,12 @@ for symbol in top_companies:
 
 combined_df.to_csv(file_path, index=False)
 
-upload_file_to_s3(file_path, bucket_name)
+date_folder = datetime.now().strftime('%Y-%m-%d')
 
-print("File Uploaded to S3 Succesfully")
+s3_loader = s3Loader()
+s3_loader.upload_file_to_s3(file_path, date_folder, date_folder)
 
-load_to_redshift()
+redshift_loader = RedshiftLoader()
+redshift_loader.from_s3(folder_name=date_folder, table_name=os.getenv("FACT_STOCK_TABLE"))
 
-print("Data Successfully Loaded To Redshift")
+redshift_loader.from_s3(folder_name="stock_split_data", table_name= os.getenv("STOCK_SPLIT_TABLE"))

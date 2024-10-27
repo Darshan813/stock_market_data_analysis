@@ -13,4 +13,7 @@ def extract(url):
         print("Calling exception")
         print("Something went wrong: ", e)
 
+    if __name__ == "__main__":
+        print("Hello")
+
     return df

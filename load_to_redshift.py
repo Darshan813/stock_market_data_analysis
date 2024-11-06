@@ -155,7 +155,7 @@ class RedshiftLoader:
             self.conn.commit()
             print(f"Final Stock table created in Redshift database")
         except Exception as e:
-            print(f"Error loading data into {e}")
+            print(f"{e}")
         finally:
             cursor.close()
 
@@ -207,10 +207,12 @@ class RedshiftLoader:
             print("prev_30_days_pct_change Table Created.")
             cursor.execute("CALL prev_n_days_pct_change(-3, 'prev_90_days_pct_change')");
             print("prev_90_days_pct_change Table Created.")
+            cursor.execute("CALL prev_n_days_pct_change(-6, 'prev_180_days_pct_change')");
+            print("prev_180_days_pct_change Table Created.")
             cursor.execute("CALL prev_n_days_pct_change(-12, 'prev_365_days_pct_change')");
             print("prev_365_days_pct_change Table Created.")
             self.conn.commit()
         except Exception as e:
-            print(f"Error loading data into {e}")
+            print(f"Error loading data into Prodecures: {e}")
         finally:
             cursor.close()

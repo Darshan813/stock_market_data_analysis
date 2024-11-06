@@ -9,11 +9,6 @@ def extract(url):
         data = response.json()
         stock_name = data["Meta Data"]["2. Symbol"]
         df = transform(data, stock_name)
+        return df
     except Exception as e:
-        print("Calling exception")
         print("Something went wrong: ", e)
-
-    if __name__ == "__main__":
-        print("Hello")
-
-    return df

@@ -73,8 +73,6 @@ One of the major challenges encountered was handling stock split data, particula
 - Scheduled data refreshes and transformations
 - Comprehensive error handling and notification system
 
-## 🚀 Getting Started
-
 ### Prerequisites
 ```bash
 python==3.11.10

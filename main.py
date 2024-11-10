@@ -9,8 +9,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-api_key = os.getenv("API_KEY")
-top_companies = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'TSLA', 'META', 'BRK.A', 'NVDA', 'JPM', 'V']
+api_key = os.getenv('API_KEY')
+print(api_key)
+top_companies = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'TSLA', 'META', 'NVDA', 'JPM', 'V']
 file_path = f"C:\\Users\\ratho\\PycharmProjects\\stock_market\\stock_data\\combined_df.csv"
 
 combined_df = pd.DataFrame()

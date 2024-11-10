@@ -96,9 +96,7 @@ psycopg2==2.9.x  # For PostgreSQL connectivity
   - Implement predictive models using 10-year historical data
   - Focus on price prediction and trend analysis
 
-Real-Time Data Processing:
+- **Real-Time Data Processing**:
+  - Implement web socket connections for real-time market data
+  - Add stream processing capabilities using Apache Kafka or AWS Kinesis
 
-Implement websocket connections for real-time market data
-Add stream processing capabilities using Apache Kafka or AWS Kinesis
-Develop real-time alerting system for significant price movements
-Enable live dashboard updates with minimal latency

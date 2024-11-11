@@ -98,3 +98,6 @@ psycopg2==2.9.x  # For PostgreSQL connectivity
   - Implement web socket connections for real-time market data
   - Add stream processing capabilities using Apache Kafka or AWS Kinesis
 
+## Dashboard
+
+https://public.tableau.com/shared/Q8C93XBQD?:display_count=n&:origin=viz_share_link

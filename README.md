@@ -98,6 +98,12 @@ psycopg2==2.9.x  # For PostgreSQL connectivity
   - Implement web socket connections for real-time market data
   - Add stream processing capabilities using Apache Kafka or AWS Kinesis
 
+# Airflow Dag
+
+![Screenshot (20)](https://github.com/user-attachments/assets/385975e4-d1ac-4ecb-af7c-84e346bdaf58)
+
+
+
 ## Dashboard
 
 https://public.tableau.com/shared/Q8C93XBQD?:display_count=n&:origin=viz_share_link

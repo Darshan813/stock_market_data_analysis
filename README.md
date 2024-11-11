@@ -4,7 +4,7 @@ A robust ETL pipeline that extracts, transforms, and loads U.S. stock market dat
 
 ## 🚀 Features
 
-- Extracts top 10 US stock market data using Alpha Vantage API
+- Extracts top 10 US stock market data for the last 25 years using Alpha Vantage API
 - Handles stock split adjustments using Yahoo Finance API
 - Cloud-based data storage and warehousing using Amazon Redshift
 - Automated pipeline orchestration with Apache Airflow
@@ -34,11 +34,11 @@ A robust ETL pipeline that extracts, transforms, and loads U.S. stock market dat
                                                 v
     Alpha Vantage API --> Data Extraction --> Data Transformation --> Amazon Cloud
                                                                      |
-    Yahoo Finance API --> Split Data Handling                           |
+    Yahoo Finance API --> Split Data Handling                        |
                                                                      |
-                                                            Amazon Redshift
-                                                                     |
-                                                        Stock Analysis Procedures
+                                                            Amazon Redshift      
+                                                                     |     
+                                                        Stock Analysis Procedures  -- > Tableau
 
 ## 🔑 Key Challenges & Solutions
 
@@ -52,7 +52,7 @@ One of the major challenges encountered was handling stock split data, particula
 - Developed a robust adjustment mechanism to accurately reflect stock splits
 - Ensured data consistency across the entire pipeline
 
-## 📊 Features Deep Dive
+## Overview
 
 ### 1. Data Extraction
 - Fetches historical data for top 10 US stocks
